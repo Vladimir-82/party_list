@@ -29,6 +29,7 @@ for mem in persons_list:
     elif mem.contr > middle:
         debitors_list.append(mem)
 
+
 while True:
 
     if debitors_list[0].contr - middle == middle - creditors_list[0].contr:
@@ -54,3 +55,4 @@ while True:
 
     if len(debitors_list) < 1 or len(creditors_list) < 1:
         break
+
