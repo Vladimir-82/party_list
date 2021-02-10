@@ -32,18 +32,18 @@ for mem in persons_list:
 while True:
 
     if debitors_list[0].contr - middle == middle - creditors_list[0].contr:
-        print(creditors_list[0].name, '1должен', debitors_list[0].name, debitors_list[0].contr - middle, 'рублей')
+        print(creditors_list[0].name, 'должен', debitors_list[0].name, round(debitors_list[0].contr - middle, 2), 'рублей')
         creditors_list[0].contr = middle
         debitors_list[0].contr = middle
 
 
     elif debitors_list[0].contr - middle > middle - creditors_list[0].contr:
-        print(creditors_list[0].name, '2должен', debitors_list[0].name, middle - creditors_list[0].contr, 'рублей')
+        print(creditors_list[0].name, 'должен', debitors_list[0].name, round(middle - creditors_list[0].contr, 2), 'рублей')
         debitors_list[0].contr = debitors_list[0].contr - (middle - creditors_list[0].contr)
         creditors_list[0].contr = middle
 
     else:
-        print(creditors_list[0].name, '3должен', debitors_list[0].name, debitors_list[0].contr - middle, 'рублей')
+        print(creditors_list[0].name, 'должен', debitors_list[0].name, round(debitors_list[0].contr - middle, 2), 'рублей')
         creditors_list[0].contr = creditors_list[0].contr + debitors_list[0].contr - middle
         debitors_list[0].contr = middle
 
@@ -52,7 +52,5 @@ while True:
     if creditors_list[0].contr == middle:
         del creditors_list[0]
 
-    if len(debitors_list) < 1:
+    if len(debitors_list) < 1 or len(creditors_list) < 1:
         break
-print(creditors_list)
-print(debitors_list)
