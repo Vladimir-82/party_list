@@ -10,6 +10,7 @@ def counter(debitor, creditor, middle):
     if debitor - middle == middle - creditor:
         creditor = middle
         debitor = middle
+        print(creditor.name, 'должен', debitor.name, debitor - middle, 'рублей' )
 
     elif debitor - middle > middle - creditor:
         debitor = debitor - (middle - creditor)
@@ -34,16 +35,15 @@ for member in range(1, members+1):
 for mem in persons_list:
     summory.append(mem.contr)
 middle = sum(summory)/members
-print(middle)
 
 
+#print(counter(persons_list[0].contr, persons_list[2].contr, middle))
 for i in range(len(persons_list)):
-    if persons_list[i].contr<middle:
-        creditor = persons_list[i].contr
-    else:
+    if persons_list[i].contr < middle:
         debitor = persons_list[i].contr
-    counter(debitor=debitor, creditor=creditor,middle=middle)
+    elif persons_list[i].contr > middle:
+        creditor = persons_list[i].contr
 
-
+print(counter(debitor, creditor, middle))
 
 
