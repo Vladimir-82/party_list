@@ -1,6 +1,3 @@
-from random import shuffle
-
-
 class Person:
     def __init__(self, name, contr):
         self.name = name
@@ -16,9 +13,11 @@ debitors_list = []
 creditors_list = []
 
 members = int(input("Введите колличество участников:"))
+print('$$$$$$$$$$$$$$$$$$$$$$$$')
 for member in range(1, members + 1):
     mem = Person(name=str(input('Введите имя участника:')),
                  contr=float(input('Введите взнос:')))
+    print('--------------------------')
     persons_list.append(mem)
 
 for mem in persons_list:
@@ -52,6 +51,7 @@ while True:
         creditors_list[0].contr = creditors_list[0].contr + debitors_list[0].contr - middle
         debitors_list[0].contr = middle
 
+
     if debitors_list[0].contr == middle:
         del debitors_list[0]
     if creditors_list[0].contr == middle:
@@ -59,3 +59,4 @@ while True:
 
     if len(debitors_list) < 1 or len(creditors_list) < 1:
         break
+input('Расчет окончен)')
